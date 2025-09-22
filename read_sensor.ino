@@ -30,47 +30,25 @@ void read_sensor() {
     // Set valSoil to 0 if the soil sensor 1 reading is out of range
     valSoil2 = 0;
   }
-
-  // read soil sensor 3
-  int readSoil3 = analogRead(SOILPIN3);
-  if (readSoil3 >= soilTreshold && readSoil3 <= 4095) {
-    valSoil3 = (100 - ((readSoil3 / 4095.0) * 100));
-  } else {
-    Serial.println(F("Failed to read soil sensor 3!"));
-    // Set valSoil to 0 if the soil sensor 1 reading is out of range
-    valSoil3 = 0;
-  }
-
-  // read soil sensor 4
-  int readSoil4 = analogRead(SOILPIN4);
-  if (readSoil4 >= soilTreshold && readSoil4 <= 4095) {
-    valSoil4 = (100 - ((readSoil4 / 4095.0) * 100));
-  } else {
-    Serial.println(F("Failed to read soil sensor 4!"));
-    // Set valSoil to 0 if the soil sensor 1 reading is out of range
-    valSoil4 = 0;
-  }
   
 
   // membaca sensor water level
-  int pulse, inches, cm;
-  digitalWrite(TRIG_WL,LOW);
-  delayMicroseconds(2);
-  digitalWrite(TRIG_WL, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(TRIG_WL, LOW);
-  pulse = pulseIn(ECHO_WL, HIGH);
-  valCm = pulse * 0.034 / 2;
-  inches = valCm * 2.54;
+  // int pulse, inches, cm;
+  // digitalWrite(TRIG_WL,LOW);
+  // delayMicroseconds(2);
+  // digitalWrite(TRIG_WL, HIGH);
+  // delayMicroseconds(10);
+  // digitalWrite(TRIG_WL, LOW);
+  // pulse = pulseIn(ECHO_WL, HIGH);
+  // valCm = pulse * 0.034 / 2;
+  // inches = valCm * 2.54;
   
   readWaterFlow();
   Serial.println("Temp : " + String(valTemp));
   Serial.println("Hum : " + String(valHum));
   Serial.println("Soil Moisture1: " + String(valSoil) + "%");
   Serial.println("Soil Moisture2: " + String(valSoil2) + "%");
-  Serial.println("Soil Moisture3: " + String(valSoil3) + "%");
-  Serial.println("Soil Moisture4: " + String(valSoil4) + "%");
-  Serial.print("Jarak (cm) : " + String(valCm));
+  // Serial.print("Jarak (cm) : " + String(valCm));
 
   delay(500);
 }
