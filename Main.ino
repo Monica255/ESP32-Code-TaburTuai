@@ -11,26 +11,30 @@
 #include "addons/RTDBHelper.h"
 
 // Pin Sensor
-#define POMPA1PIN 4
-#define POMPA2PIN 16
-#define POMPA3PIN 17
-#define POMPA4PIN 18
-#define SELENOID1PIN 19
-#define SELENOID2PIN 21
-#define SELENOID3PIN 22
-#define SELENOID4PIN 23
-#define SELENOID5PIN 25
-#define SELENOID6PIN 26
-#define SELENOID7PIN 27
-#define SELENOID8PIN 32
-#define SELENOID9PIN 33
-#define SELENOID10PIN 13
-// pin water level
-// #define TRIG_WL 5
-// #define ECHO_WL 18
+#define SOILPIN       32   // Soil sensor 1 (ADC input)
+#define SOILPIN2      35   // Soil sensor 2 (ADC input, input only)
+#define DHTPIN        5    // DHT sensor (moved from 15 to 5 for safety)
 
-// Pin sensor water flow and out
-#define WATER_FLOW 17
+// Pin Pumps
+#define POMPA1PIN     4
+#define POMPA2PIN     16
+#define POMPA3PIN     18
+#define POMPA4PIN     19
+
+// Pin Solenoids
+#define SELENOID1PIN  21
+#define SELENOID2PIN  22
+#define SELENOID3PIN  23
+#define SELENOID4PIN  25
+#define SELENOID5PIN  26
+#define SELENOID6PIN  27
+#define SELENOID7PIN  13
+#define SELENOID8PIN  14
+#define SELENOID9PIN  12
+#define SELENOID10PIN 33
+
+// Pin Water Flow
+#define WATER_FLOW    17   // Water flow sensor (interrupt capable)
 
 //#define DHTTYPE Sensor;
 #define DHTTYPE DHT11
